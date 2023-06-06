@@ -3,8 +3,8 @@ pipeline {
         tools {
         jdk 'JDK 17'
     }
-
-stage('Build JAR') {
+    stages{
+        stage('Build JAR') {
             steps {
                 script {
                     // This will print the final name of the artifact
@@ -33,5 +33,6 @@ stage('Build JAR') {
                 sh 'docker build -t petclinic .'
             }
         }
-    }
+    }    
+} 
 
