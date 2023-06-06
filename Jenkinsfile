@@ -15,7 +15,7 @@ pipeline {
         stage('List and Display File Contents') {
             steps {
                 sh '''
-                    find ${WORKSPACE}/subdirectory -type f -exec cat {} \;
+                    find ${WORKSPACE}/subdirectory -type f -exec cat {};
                 '''
             }
         }
