@@ -11,11 +11,12 @@ RUN addgroup --system java && adduser --system --group java
 # Change to the /app directory
 WORKDIR /app
 
-# Copy the jar to the production image from the builder stage.
-COPY ${WORKSPACE}/target/spring-petclinic-3.1.0-SNAPSHOT.jar /app/spring-petclinic-3.1.0-SNAPSHOT.jar
+ARG JAR_FILE
+COPY ${JAR_FILE} app.jar
+
 
 # Ensure the application runs as the non-root user
 USER java
 
 # Run the application
-ENTRYPOINT ["java", "-jar", "/app/spring-petclinic-3.1.0-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]

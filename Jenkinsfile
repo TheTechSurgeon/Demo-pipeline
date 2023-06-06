@@ -1,9 +1,7 @@
 pipeline {
-    agent any 
-        tools {
-        jdk 'JDK 17'
-    }
-    stages{
+    agent any
+
+    stages {
         stage('Build JAR') {
             steps {
                 script {
@@ -15,24 +13,13 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
-
-        stage('Testing stage') {
-            steps {
-                sh './mvnw test'
-            }
-        }
-
-         stage('Build Docker Image') {
-            agent {
-                dockerfile true
-            }
+        stage('Build Docker Image') {
             steps {
                 // Copy the JAR to the Docker context
                 sh "cp target/${env.JAR_NAME} ."
                 // Build the Docker image
-                sh 'docker build -t petclinic .'
+                sh 'docker build -t pet-clinic .'
             }
         }
-    }    
-} 
-
+    }
+}
