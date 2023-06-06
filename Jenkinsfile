@@ -30,8 +30,8 @@ stage('Build JAR') {
                 // Copy the JAR to the Docker context
                 sh "cp target/${env.JAR_NAME} ."
                 // Build the Docker image
-                sh 'docker build -t myapp .'
+                sh 'docker build -t petclinic .'
             }
         }
     }
-}
+
