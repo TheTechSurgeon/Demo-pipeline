@@ -22,6 +22,13 @@ pipeline {
                sh 'mvn test'
             }
         }
+
+        stage('Dependency Check') {
+            steps {
+                //runs owasp dependency check
+                sh 'mvn org.owasp:dependency-check-maven:check'
+            }
+        }
         stage('Build Docker Image') {
             steps {
                 // Copy the JAR to the Docker context
@@ -30,5 +37,18 @@ pipeline {
                 sh "docker build --build-arg JAR_FILE=${env.JAR_NAME} -t pet-clinic ."
             }
         }
+        /*
+        stage('Container Security Scan') {
+            steps {
+                script {
+
+                    def anchoreImage = docker.build('pet-clinic')
+                    sh "echo 'docker.io/library/${anchoreImage.id}' > anchore_images"
+                    sh 'anchore-cli image add docker.io/library/${anchoreImage.id}'
+                    sh 'anchore-cli evaluate check docker.io/library/${anchoreImage.id}'
+                }
+            }
+        }
+        */
     }
 }
