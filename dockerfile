@@ -5,18 +5,7 @@ FROM eclipse-temurin:18
 LABEL maintainer="your@email.com"
 
 
-# Add a non-root user to run our application
-RUN addgroup --system java && adduser --system --group java
+FROM openjdk:11-jdk-slim
+COPY ${env.JAR_NAME} /app/app.jar
+ENTRYPOINT ["java","-jar","/app/app.jar"]
 
-# Change to the /app directory
-WORKDIR /app
-
-ARG JAR_FILE
-COPY ${JAR_FILE} app.jar
-
-
-# Ensure the application runs as the non-root user
-USER java
-
-# Run the application
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
