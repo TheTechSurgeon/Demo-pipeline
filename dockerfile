@@ -1,5 +1,5 @@
 # Use a minimal base image to reduce the attack surface
-FROM FROM eclipse-temurin:18
+FROM eclipse-temurin:18
 
 # Metadata indicating the maintainer of the image
 LABEL maintainer="your@email.com"
