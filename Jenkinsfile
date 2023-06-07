@@ -12,8 +12,6 @@ pipeline {
                     def mavenOutput = sh(script: 'mvn help:evaluate -Dexpression=project.build.finalName -q -DforceStdout', returnStdout: true).trim()
                     // Store the JAR name for late stages
                     env.JAR_NAME = "${mavenOutput}.jar"
-                    sh "jar tf target/${env.JAR_NAME}"
-
                 }
                 sh 'mvn clean package'
             }
@@ -29,7 +27,7 @@ pipeline {
                 // Copy the JAR to the Docker context
                 sh "cp target/${env.JAR_NAME} ."
                 // Build the Docker image
-                sh 'docker build -t pet-clinic .'
+                sh "docker build --build-arg JAR_FILE=${env.JAR_NAME} -t pet-clinic ."
             }
         }
     }

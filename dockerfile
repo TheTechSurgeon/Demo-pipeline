@@ -5,7 +5,9 @@ FROM eclipse-temurin:18
 LABEL maintainer="your@email.com"
 
 
-FROM openjdk:11-jdk-slim
-COPY ${env.JAR_NAME} /app/app.jar
+# Dockerfile
+FROM openjdk:17-jdk-slim
+ARG JAR_FILE
+COPY ${JAR_FILE} /app/app.jar
 ENTRYPOINT ["java","-jar","/app/app.jar"]
 
