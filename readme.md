@@ -1,3 +1,4 @@
+link to the  docker hub repo https://hub.docker.com/repository/docker/developerben/pet-clinic-demo/general
 Command to run for the Docker image: docker run -p 8080:8080 petclinic:latest
 
 Explaining the work:
