@@ -32,9 +32,6 @@ I decided the simplest method would be to pass the compiled jar as an env. varia
 
 My settings.xml file and the pom.xml in the projec both point to Jcenter
 
-4. Bonus - use JFrog Artifactory in your pipeline
-
-I did manage to get Artifactory running after discovering that running it as a service on manjaro required far more pain than it was worth. I ran it manually. Unfortunately I did not include it in this project
 
 
 Deliverables
@@ -45,4 +42,4 @@ Deliverables
 2. Attached runnable docker image + the command to run it x
 3. Build and deliver a presentation illustrating how you would add security within this >
 pipeline. Be as specific as possible in your technology recommendations.x
-4. Bonus - Show us security checks you implemented in the pipeline x
+4. Bonus - Show  security checks implemented in the pipeline x
