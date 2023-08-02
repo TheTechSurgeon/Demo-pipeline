@@ -10,12 +10,7 @@ pipeline {
     }
     
     stages {
-        stage('Checkout') {
-            steps {
-                // Use any necessary checkout step for your version control system
-                // e.g., git or svn
-            }
-        }
+        
         
         stage('Compile and Package') {
             steps {
