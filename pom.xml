@@ -270,26 +270,10 @@
 
   <repositories>
     <repository>
-        <id>jcenter</id>
-        <name>JCenter</name>
-        <url>https://jcenter.bintray.com/</url>
-    </repository>
-    <repository>
-      <id>spring-snapshots</id>
-      <name>Spring Snapshots</name>
-      <url>https://repo.spring.io/snapshot</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>spring-milestones</id>
-      <name>Spring Milestones</name>
-      <url>https://repo.spring.io/milestone</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
+            <id>artifactory-oss</id>
+            <name>Artifactory Open Source Repository</name>
+            <url>https://benatl.jfrog.io/artifactory/libs-release</url>
+        </repository>
   </repositories>
 
   <pluginRepositories>
