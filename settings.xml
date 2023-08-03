@@ -4,12 +4,12 @@
   <servers>
     <server>
       <username>${security.getCurrentUsername()}</username>
-      <password>${security.getEscapedEncryptedPassword()!"*** Insert encrypted password here ***"}</password>
+      <password>${security.getEscapedEncryptedPassword()!"*** cmVmdGtuOjAxOjE3MjI2MDM2MzE6VEdYRFJCaHU4WGZrTHZnSGpnemk3Q0Z1T3dV ***"}</password>
       <id>central</id>
     </server>
     <server>
       <username>${security.getCurrentUsername()}</username>
-      <password>${security.getEscapedEncryptedPassword()!"*** Insert encrypted password here ***"}</password>
+      <password>${security.getEscapedEncryptedPassword()!"*** cmVmdGtuOjAxOjE3MjI2MDM2MzE6VEdYRFJCaHU4WGZrTHZnSGpnemk3Q0Z1T3dV ***"}</password>
       <id>snapshots</id>
     </server>
   </servers>
